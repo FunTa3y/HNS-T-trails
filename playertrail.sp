@@ -28,7 +28,8 @@ public Action:OnPlayerRunCmd(client, &buttons, &impulse, Float:vel[3], Float:ang
 public void DrawPreStrafeBeam(client, Float:origin[3])	{
 	if (!g_bTrail[client])
 		return;
-	if (GetClientTeam(client) == CS_TEAM_T){
+	if (GetClientTeam(client) == CS_TEAM_T)
+		if (IsPlayerAlive(client)) {
 	new Float:v1[3], Float:v2[3];
 	v1[0] = origin[0];
 	v1[1] = origin[1];
